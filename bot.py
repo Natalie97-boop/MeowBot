@@ -5,7 +5,7 @@ from discord.ext.commands import Bot
 import asyncio
 
 TOKEN = 'REDACTED'
-pattern = 'm.*e.*o.*w'
+pattern = '[Mm][Ee][Oo][Ww]'
 
 description = '''MeowBot'''
 
