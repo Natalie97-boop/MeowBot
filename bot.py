@@ -22,12 +22,9 @@ async def on_message(message):
     if message.author == bot.user:
         return
     if message.content == "MeowCount":
-        with open((guild_name + ".txt"),"r") as filehandle:
-            num = filehandle.readline()
-            num2 = int(num) + 1
-            num3 = str(num2)
-            await message.channel.send(num3 + " Meows have been served")
-            return
+        with open(f"{guild_name} .txt"), "r") as f:
+            num = int(f.readline()) + 1
+            return await message.channel.send(f"{num} Meows have been served")
     if re.search(pattern, message.content):
         try:
             with open((guild_name + ".txt"),"r") as filehandle:
