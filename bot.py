@@ -8,6 +8,7 @@ import asyncio
 
 TOKEN = 'REDACTED'
 pattern = '[Mm][Ee][Oo][Ww]'
+nyaa_pattern = '[Nn][Yy][Aa][Aa]'
 
 description = '''MeowBot'''
 
@@ -25,7 +26,7 @@ async def on_message(message):
     if message.author == bot.user:
         return
     
-    if message.content == "nyaa":
+    if re.search(nyaa_pattern, message.content):
         file = random.choice(os.listdir("./Catgirl_pics"))
         await message.channel.send("OwO")
         await message.channel.send(file=discord.File("./Catgirl_pics/" + file))
